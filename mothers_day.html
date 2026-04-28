@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mother's Day ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f4ef;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: white;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #8b6f47;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #8b6f47;
+    }
+
+    /* FAKE PAGES SYSTEM */
+
+    .page {
+      display: none;
+      padding: 80px 10%;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #8b6f47;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #8b6f47;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      max-width: 800px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .clue {
+      font-weight: bold;
+      color: #6f5737;
+      font-size: 1.3rem;
+    }
+
+    input {
+      padding: 12px;
+      width: 280px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+
+    button {
+      background: #8b6f47;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+
+    button:hover {
+      background: #6f5737;
+    }
+
+    #finalMessage {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .final-box {
+      background: #f3ede3;
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    /* CAROUSEL */
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      max-height: 650px;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .controls {
+      margin-top: 15px;
+    }
+
+    .favorite-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .secret-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.secret-image img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+ <nav>
+  <div class="logo">❤️ For Mom</div>
+
+  <ul>
+    <li><a href="javascript:void(0)" onclick="showPage('home'); return false;">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('memories'); return false;">Memories</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('gallery'); return false;">Gallery</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('about'); return false;">About</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('favorites'); return false;">Favorites</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('secret'); return false;">Secret 🔐</a></li>
+  </ul>
+</nav>
+
+  <!-- HOME -->
+
+  <section id="home" class="page active">
+  <div class="hero">
+    <h1>Happy Mother's Day ❤️</h1>
+    <p>
+      Find the hidden clues across the pages to discover the password
+      and unlock your surprise.
+    </p>
+  </div>
+</section>
+
+  <!-- MEMORIES -->
+
+  <section id="memories" class="page">
+    <h2>Memories</h2>
+
+    <div class="card">
+      <p>A memory always starts with...</p>
+      <p class="clue">CA</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo19.jpg" class="favorite-img">
+    </div>
+
+    <div class="card">
+      <img src="images/photo20.jpg" class="favorite-img">
+    </div>
+
+    <div class="card">
+      <img src="images/photo21.jpg" class="favorite-img">
+    </div>
+
+
+     <div class="card">
+      <img src="images/photo25.jpg" class="favorite-img">
+    </div>
+
+      <div class="card">
+      <img src="images/photo23.jpg" class="favorite-img">
+    </div>
+
+        <div class="card">
+      <img src="images/photo32.jpg" class="favorite-img">
+    </div>
+
+ <div class="card">
+      <img src="images/photo33.jpg" class="favorite-img">
+    </div>
+
+    
+    
+
+
+
+
+  </section>
+
+ 
+  </section>
+  </section>
+  <!-- GALLERY -->
+
+  <section id="gallery" class="page">
+    <h2>Gallery</h2>
+
+    <div class="carousel">
+      <img id="carouselImg" src="images/photo11.jpg">
+
+      <div class="controls">
+        <button onclick="prevImage()">⬅</button>
+        <button onclick="nextImage()">➡</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <p>Each photo holds a piece of the memory.</p>
+      <p class="clue">CA</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+<section id="about" class="page">
+   <h2>100 Things I Love About You ❤️</h2>
+
+
+  <div class="card">
+    <ol>
+      <li>Your kindness</li>
+      <li>The way you always know when something is wrong</li>
+      <li>Your hugs</li>
+      <li>Your patience</li>
+      <li>Your strength</li>
+      <li>Your smile</li>
+      <li>The way you make everyone feel welcome</li>
+      <li>Your laugh</li>
+      <li>Your advice</li>
+      <li>Your honesty</li>
+      <li>The way you always support me</li>
+      <li>Your cooking</li>
+      <li>The little sacrifices you make without saying anything</li>
+      <li>Your warmth</li>
+      <li>Your comforting words</li>
+      <li>The way you believe in me</li>
+      <li>Your loyalty</li>
+      <li>Your generosity</li>
+      <li>Your sense of humor</li>
+      <li>The way you never give up</li>
+      <li>Your courage</li>
+      <li>Your hard work</li>
+      <li>Your calm during difficult times</li>
+      <li>The way you protect our family</li>
+      <li>Your love</li>
+      <li>The way you celebrate small moments</li>
+      <li>Your late-night talks</li>
+      <li>Your good morning messages</li>
+      <li>Your encouragement</li>
+      <li>The way you listen</li>
+      <li>Your honesty even when it’s hard</li>
+      <li>Your forgiveness</li>
+      <li>The way you care for everyone</li>
+      <li>Your beautiful heart</li>
+      <li>Your resilience</li>
+      <li>Your wisdom</li>
+      <li>The way you make ordinary days special</li>
+      <li>Your hugs after a bad day</li>
+      <li>Your little jokes</li>
+      <li>The way you remember everything</li>
+      <li>Your traditions</li>
+      <li>The way you always put family first</li>
+      <li>Your strength when no one sees it</li>
+      <li>Your protective side</li>
+      <li>Your softness</li>
+      <li>The way you make me feel safe</li>
+      <li>Your confidence</li>
+      <li>Your grace</li>
+      <li>Your ability to stay strong</li>
+      <li>The way you always find a solution</li>
+      <li>Your late-night check-ins</li>
+      <li>Your selflessness</li>
+      <li>The way you celebrate my wins</li>
+      <li>Your comforting presence</li>
+      <li>Your advice when I need direction</li>
+      <li>Your faith in me</li>
+      <li>Your endless patience with me</li>
+      <li>The way you always forgive</li>
+      <li>Your thoughtful surprises</li>
+      <li>Your attention to little details</li>
+      <li>The way you make the house feel like home</li>
+      <li>Your protective love</li>
+      <li>Your tuna pie</li>
+      <li>Your life lessons</li>
+      <li>Your stories</li>
+      <li>The way you always show up</li>
+      <li>Your gentle heart</li>
+      <li>When you give me dessert even though I didn't eat my salad (Giselle)</li>
+      <li>Your strength in silence</li>
+      <li>When you make my bed in the morning when I forget (Giselle)</li>
+      <li>The way you care even when you're tired</li>
+      <li>Your understanding</li>
+      <li>The way you encourage me to dream bigger</li>
+      <li>Your unconditional love</li>
+      <li>Your little reminders</li>
+      <li>Your warm hands</li>
+      <li>Your carrot cake</li>
+      <li>Your ability to stay hopeful</li>
+      <li>The way you forgive quickly</li>
+      <li>Your sacrifices for me</li>
+      <li>Your determination</li>
+      <li>Your strong heart</li>
+      <li>The way you make family feel complete</li>
+      <li>Your love even on hard days</li>
+      <li>Your loyalty no matter what</li>
+      <li>Your ability to make me laugh</li>
+      <li>Your support during my worst moments</li>
+      <li>Your belief in second chances</li>
+      <li>Your love without conditions</li>
+      <li>Your patience when I’m difficult</li>
+      <li>Your strength through hard times</li>
+      <li>The way you care more than anyone</li>
+      <li>Your beautiful smile</li>
+      <li>Your beautiful eyes</li>
+      <li>The way you always try</li>
+      <li>The clothes you let me take</li>
+      <li>Your love that never changes</li>
+      <li>The way you make life brighter</li>
+      <li>The way you make me feel loved</li>
+      <li>Simply because you are you ❤️</li>
+    </ol>
+
+    <p class="clue">BOO</p>
+  </div>
+</section>
+
+  <!-- FAVORITES -->
+
+  <section id="favorites" class="page">
+    <h2>Favorites</h2>
+
+    <div class="card">
+      <img src="images/photo14.jpg" class="favorite-img">
+      <p>Favorite moment 1</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo2.jpg" class="favorite-img">
+      <p>Favorite moment 2</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo17.jpg" class="favorite-img">
+      <p>Favorite moment 3</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo15.jpg" class="favorite-img">
+      <p>Favorite moment 4</p>
+    </div>
+
+     <div class="card">
+      <img src="images/photo24.jpg" class="favorite-img">
+      <p>Favorite moment 5</p>
+    </div>
+
+     <div class="card">
+      <img src="images/photo26.jpg" class="favorite-img">
+      <p>Favorite moment 6</p>
+    </div>
+     <div class="card">
+      <img src="images/photo27.jpg" class="favorite-img">
+      <p>Favorite moment 7</p>
+    </div>
+
+
+    <div class="card">
+      <p class="clue">DY</p>
+    </div>
+  </section>
+
+  <!-- SECRET -->
+
+  <section id="secret" class="page">
+    <h2>Secret Door 🔐</h2>
+
+    <div class="card">
+      <p>You already know the answer ❤️</p>
+
+      <input
+        id="password"
+        placeholder="Enter password"
+      >
+
+      <br>
+
+      <button onclick="checkPassword()">Unlock</button>
+
+      <div id="finalMessage">
+        <div class="final-box">
+          <h2>We love you nigga❤️</h2>
+          <p>
+            You're the best mum ever (even though you don't make me tiramisu)
+            We hope you have a good day today.
+          </p>
+
+          <p>
+            Love, 
+          </p>
+          <p>
+            Piera & Giselle.
+          </p>
+          <p>
+
+            P.S. Check the hole in the couch.
+
+          </p>
+          <p>
+            P.S. You still owe me lemon cake & tiramisu
+          </p>
+
+        </div>
+
+       <div class="secret-image">
+  <img src="images/photo22.jpg" alt="Secret photo">
+</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* PAGE SWITCHING */
+
+    function showPage(pageId) {
+      document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+      });
+
+      document.getElementById(pageId).classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    /* PASSWORD */
+
+    function checkPassword() {
+      const value = document
+        .getElementById("password")
+        .value
+        .trim()
+        .toUpperCase();
+
+      if (value === "CACABOODY") {
+        document.getElementById("finalMessage").style.display = "block";
+      } else {
+        alert("Wrong password nigga");
+      }
+    }
+
+    /* GALLERY CAROUSEL */
+
+    const images = [
+      "images/photo11.jpg",
+      "images/photo12.jpg",
+      "images/photo3.jpg",
+      "images/photo4.jpg",
+      "images/photo5.jpg",
+      "images/photo6.jpg",
+      "images/photo18.jpg",
+      "images/photo1.jpg",
+      "images/photo29.jpg",
+      "images/photo31.jpg",
+      
+
+    ];
+
+    let index = 0;
+
+    function updateImage() {
+      document.getElementById("carouselImg").src = images[index];
+    }
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      updateImage();
+    }
+
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      updateImage();
+    }
+  </script>
+
+</body>
+</html>
